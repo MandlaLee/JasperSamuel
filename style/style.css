@@ -1,3 +1,4 @@
+/* RESET AND BASE */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +12,7 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
+/* CONTAINER */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -83,7 +84,7 @@ body {
   color: #ffcb3c;
 }
 
-/* HERO SECTION */
+/* HERO SECTIONS */
 .hero {
   position: relative;
   min-height: 80vh;
@@ -130,6 +131,38 @@ body {
   gap: 20px;
 }
 
+/* HERO BACKGROUNDS */
+.hero {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('../images/hero-bg.jpg');
+}
+
+.hero-about {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('../images/featured1.jpg');
+}
+
+.hero-books {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('../images/book-main.jpg');
+}
+
+.hero-donate {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('../images/featured2.jpg');
+}
+
+.hero-contact {
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url('../images/prayer.jpg');
+}
+
+/* BUTTONS */
 .btn {
   text-decoration: none;
   font-weight: 700;
@@ -346,18 +379,50 @@ body {
   color: #aaa;
 }
 
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.show-nav {
+  display: flex !important;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px){
   .hero-text h1{
-    font-size: 32px;
+    font-size:32px;
   }
-  .featured-grid, .book-container, .contact-grid{
-    grid-template-columns: 1fr;
+  .hero-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+  .featured-grid,
+  .book-container,
+  .contact-grid{
+    grid-template-columns:1fr;
   }
   .newsletter-form{
-    flex-direction: column;
+    flex-direction:column;
   }
   .nav{
     display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#2f78bb;
+    flex-direction:column;
+    padding:30px;
+    gap:25px;
+  }
+  .nav a{
+    font-size:16px;
+  }
+  .menu-toggle{
+    display:block;
   }
 }
