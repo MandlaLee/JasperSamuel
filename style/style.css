@@ -433,9 +433,10 @@ a{
 
 .book-card img{
   width:100%;
-  height:360px;
-  object-fit:cover;
-  margin-bottom:20px;
+  max-width:260px;
+  height:auto;
+  display:block;
+  margin:0 auto 20px;
 }
 
 .book-card h3{
