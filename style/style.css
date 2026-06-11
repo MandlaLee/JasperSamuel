@@ -766,4 +766,6 @@ a{
   }
 
 }
-```
+.hero-description{
+  color:#fff !important;
+}
