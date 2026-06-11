@@ -738,4 +738,36 @@ body {
   }
 
 }
+.made-by{
+  margin-top:10px;
+  font-size:14px;
+  color:#aaa;
+  text-align:center;
+}
 
+.made-by a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.made-by a:hover{
+  color:#ffcb3c;
+}
+
+.made-by{
+  margin-top:10px;
+  font-size:14px;
+  color:#aaa;
+  text-align:center;
+}
+
+.made-by a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.made-by a:hover{
+  color:#ffcb3c;
+}
