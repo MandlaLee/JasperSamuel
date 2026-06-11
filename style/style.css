@@ -880,3 +880,74 @@ body {
     gap:6px;
   }
 }
+/* HERO IMAGES */
+
+.hero{
+  position:relative;
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* INDEX */
+
+.hero-home{
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../hero/index-hero.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* ABOUT */
+
+.hero-about{
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../hero/about-hero.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* BOOKS */
+
+.hero-books{
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../hero/books-hero.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* CONTACT */
+
+.hero-contact{
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../hero/contact-hero.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+/* DONATE */
+
+.hero-donate{
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("../hero/donate-hero.png");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
