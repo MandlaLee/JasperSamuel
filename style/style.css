@@ -771,3 +771,27 @@ body {
 .made-by a:hover{
   color:#ffcb3c;
 }
+/* FOOTER BOTTOM */
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:50px;
+  padding-top:25px;
+  text-align:center;
+}
+
+.footer-bottom p{
+  color:#aaa;
+  font-size:14px;
+  margin:6px 0;
+}
+
+.made-by a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.made-by a:hover{
+  color:#ffcb3c;
+}
