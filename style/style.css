@@ -177,7 +177,7 @@ a{
 }
 
 .hero-description{
-  color:#fff;
+  color:#fff !important;
   max-width:850px;
   margin:0 auto 35px;
   font-size:18px;
