@@ -426,3 +426,152 @@ body {
     display:block;
   }
 }
+/* FIX FEATURED CONTENT */
+
+.featured-content{
+  padding:25px;
+}
+
+.featured-content h3{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.featured-content p{
+  color:#555;
+  margin-bottom:20px;
+  line-height:1.7;
+}
+
+.featured-content a{
+  color:#2f78bb;
+  text-decoration:none;
+  font-weight:700;
+}
+
+
+/* FEATURED IMAGES */
+
+.featured-image img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+
+/* DONATION SECTION */
+
+.donation-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.donation-box{
+  background:#fff;
+  padding:40px 30px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  border-radius:6px;
+  text-align:center;
+}
+
+.donation-box h3{
+  font-size:26px;
+  margin-bottom:15px;
+}
+
+.donation-box p{
+  margin-bottom:25px;
+  color:#555;
+}
+
+
+/* IMPACT SECTION */
+
+.donate-impact{
+  padding:90px 0;
+  background:#f7f7f7;
+}
+
+.impact-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.impact-box{
+  background:#fff;
+  padding:35px;
+  border-radius:6px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+.impact-box h3{
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+
+/* CTA SECTION */
+
+.cta-section{
+  background:#2f78bb;
+  color:#fff;
+  text-align:center;
+  padding:100px 0;
+}
+
+.cta-section h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.cta-section p{
+  max-width:750px;
+  margin:0 auto 35px;
+  line-height:1.8;
+}
+
+.cta-section .btn{
+  margin:10px;
+}
+
+
+/* BUTTONS */
+
+.btn{
+  display:inline-block;
+}
+
+
+/* SECTION SPACING */
+
+.donate-options,
+.donate-why{
+  padding:90px 0;
+}
+
+.donate-why h2,
+.donate-options h2,
+.donate-impact h2{
+  font-size:42px;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+.donate-why p{
+  max-width:850px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+
+.donate-why ul{
+  max-width:700px;
+  margin:0 auto;
+  padding-left:20px;
+  line-height:2;
+}
+
