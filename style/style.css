@@ -769,14 +769,3 @@ a{
 .hero-description{
   color:#fff !important;
 }
-.featured-card{
-  overflow:hidden;
-  border-radius:8px;
-}
-
-.featured-image img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  display:block;
-}
