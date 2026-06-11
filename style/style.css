@@ -205,6 +205,8 @@ a{
   background-repeat:no-repeat;
 }
 
+/* ABOUT */
+
 .hero-about{
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
@@ -214,6 +216,8 @@ a{
   background-position:center;
   background-repeat:no-repeat;
 }
+
+/* BOOKS */
 
 .hero-books{
   background:
@@ -225,6 +229,8 @@ a{
   background-repeat:no-repeat;
 }
 
+/* CONTACT */
+
 .hero-contact{
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
@@ -235,6 +241,8 @@ a{
   background-repeat:no-repeat;
 }
 
+/* DONATE */
+
 .hero-donate{
   background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
@@ -244,7 +252,6 @@ a{
   background-position:center;
   background-repeat:no-repeat;
 }
-
 /* =========================
    BUTTONS
 ========================= */
