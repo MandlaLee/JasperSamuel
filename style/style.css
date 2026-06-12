@@ -1028,7 +1028,7 @@ ul{
 
 
 /* =========================
-   FEATURED BOOK CARD
+   FEATURED BOOK SECTION
 ========================= */
 
 .book-section{
@@ -1036,17 +1036,24 @@ ul{
   background:#f5f7fa;
 }
 
+/* MAIN LONG CARD */
+
 .featured-book-card{
   background:#ffffff;
-  border-radius:18px;
-  padding:60px;
+
+  border-radius:20px;
+
+  padding:70px;
 
   display:grid;
   grid-template-columns:420px 1fr;
-  gap:70px;
+
+  gap:80px;
+
   align-items:center;
 
   max-width:1200px;
+
   margin:auto;
 
   /* ONLY THE CARD HAS SHADOW */
@@ -1054,98 +1061,129 @@ ul{
     0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* BOOK IMAGE SIDE */
+/* =========================
+   BOOK IMAGE
+========================= */
 
 .book-image{
   display:flex;
   justify-content:center;
   align-items:center;
-
-  /* SAME COLOR AS BOOK BACKGROUND */
-  background:#f7f7f7;
-
-  border-radius:14px;
-  padding:40px;
 }
 
-/* REMOVE BOOK SHADOW */
+/* NO INNER BOX */
+/* NO IMAGE SHADOW */
 
 .book-image img{
   width:100%;
   max-width:320px;
   height:auto;
+
   object-fit:contain;
 
+  background:transparent;
+
   filter:none;
-  transition:0.3s ease;
+
+  transition:0.35s ease;
 }
 
 .book-image img:hover{
   transform:translateY(-4px);
 }
 
-/* TEXT */
+/* =========================
+   TEXT CONTENT
+========================= */
 
 .section-label{
   display:inline-block;
+
   color:#2f78bb;
+
   font-size:13px;
+
   font-weight:700;
+
   letter-spacing:2px;
-  margin-bottom:18px;
+
+  margin-bottom:20px;
 }
 
 .book-text h2{
-  font-size:54px;
-  line-height:1.1;
-  margin-bottom:25px;
+  font-size:58px;
+
+  line-height:1.05;
+
   color:#1b1b1b;
+
+  margin-bottom:28px;
 }
 
 .book-text p{
   font-size:17px;
-  line-height:1.9;
+
+  line-height:1.95;
+
   color:#555;
+
   max-width:700px;
-  margin-bottom:35px;
+
+  margin-bottom:38px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 .btn-blue{
-  background:#2f78bb;
-  color:#fff;
-  padding:16px 36px;
-  border-radius:6px;
-  font-weight:700;
   display:inline-block;
+
+  background:#2f78bb;
+
+  color:#fff;
+
+  padding:16px 38px;
+
+  border-radius:6px;
+
+  font-size:14px;
+
+  font-weight:700;
+
   transition:0.3s ease;
 }
 
 .btn-blue:hover{
-  background:#1e5f99;
+  background:#1f639f;
+
   transform:translateY(-2px);
 }
 
 /* =========================
-   MOBILE
+   MOBILE RESPONSIVE
 ========================= */
 
 @media(max-width:900px){
 
   .featured-book-card{
+
     grid-template-columns:1fr;
+
     text-align:center;
-    padding:35px 25px;
-    gap:35px;
+
+    gap:45px;
+
+    padding:40px 28px;
   }
 
   .book-text h2{
-    font-size:38px;
+    font-size:40px;
   }
 
   .book-text p{
     font-size:16px;
+
     margin-left:auto;
     margin-right:auto;
   }
