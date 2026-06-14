@@ -1193,10 +1193,7 @@ ul{
   background: var(--light-bg);
 }
 
-.donate-why .container {
-  display: flex;
-  justify-content: center;
-}
+
 
 .info-card {
   background: #fff;
