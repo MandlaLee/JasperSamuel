@@ -1403,36 +1403,53 @@ ul{
 
 
 /* =========================
-   DONATE IMPACT
+   IMPACT SECTION (BLOG STYLE FIX)
 ========================= */
+
 .donate-impact {
   padding: 100px 0;
   background: var(--white);
 }
 
+/* IMPORTANT: widen and control readability */
 .impact-text {
-  max-width: 850px;
+  max-width: 900px;   /* was too narrow before */
   margin: 0 auto;
+  padding: 0 20px;
+  text-align: left;
 }
 
+/* Paragraph flow */
 .impact-text p {
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 17px;
+  line-height: 2;
   color: var(--light-text);
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
-.impact-text h3 {
-  font-size: 22px;
-  margin-top: 40px;
-  margin-bottom: 10px;
+/* Headings need stronger presence */
+.impact-text h2 {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 50px;
   color: var(--dark);
-  position: relative;
 }
 
+/* Section headings inside blog */
+.impact-text h3 {
+  font-size: 24px;
+  margin-top: 45px;
+  margin-bottom: 12px;
+  color: var(--dark);
+  text-align: left;
+  position: relative;
+  font-weight: 700;
+}
+
+/* cleaner underline bar */
 .impact-text h3::before {
   content: "";
-  width: 40px;
+  width: 50px;
   height: 3px;
   background: var(--primary);
   display: block;
@@ -1440,3 +1457,19 @@ ul{
   border-radius: 2px;
 }
 
+/* FIX: remove “tight column feel” */
+.donate-impact .container {
+  max-width: 1100px;
+}
+
+/* mobile fix */
+@media (max-width: 900px) {
+  .impact-text {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .impact-text h2 {
+    font-size: 32px;
+  }
+}
