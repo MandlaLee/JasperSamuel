@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Book Slider | Infinite Loop + Autoplay + Fixed Arrows</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+      background: #0a121f;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .wrapper {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0b1f2e 0%, #0a1622 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 600px;
+    }
+
+    .bg-shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 48%;
+      height: 100%;
+      background: linear-gradient(125deg, #cc3843 0%, #a51e3a 100%);
+      border-radius: 2rem;
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.3);
+      transition: background 0.65s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      z-index: 1;
+    }
+
+    .product-img {
+      position: absolute;
+      z-index: 15;
+      width: 440px;
+      left: 22%;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      filter: drop-shadow(0 30px 35px rgba(0, 0, 0, 0.4));
+    }
+
+    .product-img__item {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) translateX(50px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      width: 100%;
+    }
+
+    .product-img__item.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0);
+      transition-delay: 0.2s;
+    }
+
+    .product-img__img {
+      width: 100%;
+      max-width: 380px;
+      margin: 0 auto;
+      display: block;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 28px 40px -12px rgba(0, 0, 0, 0.45);
+    }
+
+    .product-slider {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70%;
+      max-width: 860px;
+      background: rgba(10, 25, 40, 0.65);
+      backdrop-filter: blur(14px);
+      border-radius: 2rem;
+      box-shadow: 0 35px 68px rgba(0, 0, 0, 0.45);
+      z-index: 10;
+      overflow: visible !important;  /* Allows arrows to be outside */
+    }
+
+    .product-slider__item {
+      border-radius: 2rem;
+      padding: 2rem 2rem 2rem 13rem;
+      color: white;
+    }
+
+    .product-slider__title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 0.65rem;
+      background: linear-gradient(120deg, #fff, #ffcfcf);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .product-slider__desc {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+      opacity: 0.9;
+      max-width: 90%;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .product-meta {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .buy-btn {
+      background: #2f78bb;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1.5px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    .buy-btn:hover {
+      background: #1e5a8a;
+      transform: scale(1.02);
+    }
+
+    .swiper-slide-active .product-slider__title,
+    .swiper-slide-active .product-slider__desc,
+    .swiper-slide-active .product-meta,
+    .swiper-slide-active .buy-btn {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .swiper-slide-active .product-slider__title { transition-delay: 0.1s; }
+    .swiper-slide-active .product-slider__desc { transition-delay: 0.2s; }
+    .swiper-slide-active .product-meta { transition-delay: 0.3s; }
+    .swiper-slide-active .buy-btn { transition-delay: 0.4s; }
+
+    /* ----- FIXED ARROWS (OUTSIDE EDGES) ----- */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 30;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .prev:hover, .next:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev {
+      left: -26px;
+    }
+
+    .next {
+      right: -26px;
+    }
+
+    /* Responsive: bring arrows inside the slider edges on smaller screens */
+    @media screen and (max-width: 1200px) {
+      .prev {
+        left: -20px;
+      }
+      .next {
+        right: -20px;
+      }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .product-slider {
+        overflow: visible;
+        width: 85%;
+      }
+      .prev, .next {
+        width: 44px;
+        height: 44px;
+        font-size: 1.8rem;
+        background: rgba(0, 0, 0, 0.6);
+      }
+      .prev {
+        left: -18px;
+      }
+      .next {
+        right: -18px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .prev, .next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .prev {
+        left: -15px;
+      }
+      .next {
+        right: -15px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .prev, .next {
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+      }
+      .prev {
+        left: 5px;
+      }
+      .next {
+        right: 5px;
+      }
+    }
+
+    /* Responsive layout (rest unchanged) */
+    @media screen and (max-width: 1280px) {
+      .product-img { width: 380px; left: 18%; }
+      .product-slider__item { padding: 2rem 2rem 2rem 12rem; }
+    }
+
+    @media screen and (max-width: 1024px) {
+      .bg-shape { width: 85%; left: 50%; transform: translateX(-50%); height: 280px; top: 30px; border-radius: 1.8rem; }
+      .content { flex-direction: column; min-height: auto; padding: 2rem 0; }
+      .product-img { position: relative; width: 320px; left: auto; top: 0; transform: none; margin: 1rem auto; order: 1; }
+      .product-img__item { position: relative; transform: none; top: auto; opacity: 0; visibility: hidden; display: none; }
+      .product-img__item.active { display: block; visibility: visible; opacity: 1; transform: none; }
+      .product-slider { position: relative; width: 92%; top: auto; right: auto; transform: none; margin: 1rem auto 3rem; order: 2; overflow: visible; }
+      .product-slider__item { padding: 2rem 1.8rem !important; text-align: center; }
+      .product-slider__desc { max-width: 100%; }
+    }
+
+    @media screen and (max-width: 680px) {
+      .product-slider__title { font-size: 1.9rem; }
+      .product-slider__desc { font-size: 1rem; }
+      .buy-btn { padding: 0.7rem 1.8rem; font-size: 0.8rem; }
+      .bg-shape { height: 210px; top: 20px; }
+      .product-img { width: 260px; }
+    }
+
+    @media screen and (max-width: 480px) {
+      .product-slider__title { font-size: 1.7rem; }
+      .product-meta { font-size: 0.7rem; }
+    }
+
+    .swiper-fade .swiper-slide { transition-property: opacity; }
+    .buy-btn:active { transform: scale(0.98); }
+  </style>
+</head>
+<body>
+  <!-- HTML content same as before (unchanged) -->
+  <div class="wrapper book-slider">
+    <div class="content">
+      <div class="bg-shape"></div>
+      <div class="product-img">
+        <div class="product-img__item active" data-img="img1"><img src="books/thrive-in-two.png" alt="Thrive In Two" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img2"><img src="books/against-all-odds.jpg" alt="Against All Odds" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img3"><img src="books/before-divorce.jpg" alt="Before Divorce" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img4"><img src="books/speak-faith-speak-life.jpg" alt="Speak Faith Speak Life" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img5"><img src="books/kingship-christians.jpg" alt="Kingship Christians" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img6"><img src="books/when-god-says-wait.jpg" alt="When God Says Wait" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img7"><img src="books/the-way.jpg" alt="The Way" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img8"><img src="books/messiah.jpg" alt="Messiah" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img9"><img src="books/job.jpg" alt="Job" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img10"><img src="books/moses.jpg" alt="Moses" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img11"><img src="books/prayer-habit.jpg" alt="Prayer Habit" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img12"><img src="books/reinvent-yourself.jpg" alt="Reinvent Yourself" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img13"><img src="books/laws-of-influence.jpg" alt="Laws of Influence" class="product-img__img" loading="lazy"></div>
+        <div class="product-img__item" data-img="img14"><img src="books/little-david.jpg" alt="Little David & A Big God" class="product-img__img" loading="lazy"></div>
+      </div>
+
+      <div class="product-slider">
+        <div class="swiper-wrapper">
+          <div class="product-slider__item swiper-slide" data-target="img1"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Thrive In Two</h1><p class="product-slider__desc">Emotional strength, trust, and lasting relationships.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img2"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Against All Odds</h1><p class="product-slider__desc">A survival manual for the soul under pressure.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img3"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Before Divorce</h1><p class="product-slider__desc">A lifeline for exhausted relationships.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img4"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Speak Faith, Speak Life</h1><p class="product-slider__desc">Your words shape your world.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img5"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Kingship Christians</h1><p class="product-slider__desc">Kingdom living for modern life.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img6"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">When God Says Wait</h1><p class="product-slider__desc">Worship in the waiting season.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img7"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">The Way</h1><p class="product-slider__desc">Walking daily with God.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img8"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Messiah</h1><p class="product-slider__desc">Redemption, grace, and sacrifice.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img9"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Job</h1><p class="product-slider__desc">Faith tested through suffering.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img10"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Moses</h1><p class="product-slider__desc">From insecurity to leadership.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img11"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Prayer Habit</h1><p class="product-slider__desc">Prayer as a lifestyle.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img12"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Reinvent Yourself</h1><p class="product-slider__desc">Break cycles and rebuild identity.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img13"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">21 Laws of Influence</h1><p class="product-slider__desc">Leadership through influence.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+          <div class="product-slider__item swiper-slide" data-target="img14"><div class="product-slider__card"><div class="product-slider__content"><h1 class="product-slider__title">Little David & A Big God</h1><p class="product-slider__desc">Faith over giants.</p><div class="product-meta">Paperback • Free Shipping</div><button class="buy-btn">BUY NOW</button></div></div></div>
+        </div>
+        <button class="prev" aria-label="Previous">‹</button>
+        <button class="next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      function initSwiperAndSlider() {
+        if (typeof Swiper === 'undefined') {
+          setTimeout(initSwiperAndSlider, 100);
+          return;
+        }
+
+        const bgShape = document.querySelector('.bg-shape');
+        const productImages = document.querySelectorAll('.product-img__item');
+        
+        const gradients = [
+          "radial-gradient(circle at 15% 25%, #c73f4a, #8b1e3a)",
+          "radial-gradient(circle at 75% 20%, #2c3e8f, #0f1a2f)",
+          "radial-gradient(circle at 30% 80%, #1f6392, #0b1c2c)",
+          "radial-gradient(circle at 65% 40%, #b53b4b, #641e33)",
+          "radial-gradient(circle at 20% 60%, #2c5a7a, #0c1a28)",
+          "radial-gradient(circle at 70% 70%, #b5473a, #721c2c)",
+          "radial-gradient(circle at 40% 30%, #1f5680, #0a1422)",
+          "radial-gradient(circle at 80% 50%, #b73c48, #651e2e)",
+          "radial-gradient(circle at 25% 45%, #2b6d8f, #0c1d2b)",
+          "radial-gradient(circle at 55% 80%, #c24249, #7a1c2f)",
+          "radial-gradient(circle at 10% 70%, #1f5a78, #0f1a2c)",
+          "radial-gradient(circle at 85% 25%, #aa3643, #4a1528)",
+          "radial-gradient(circle at 45% 55%, #1d6185, #0b1724)",
+          "radial-gradient(circle at 60% 35%, #bc414b, #681e2f)"
+        ];
+
+        function updateFromSlide(swiperInstance) {
+          if (!swiperInstance || !productImages.length) return;
+          const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+          if (!activeSlide) return;
+          const targetId = activeSlide.getAttribute('data-target');
+          if (targetId) {
+            productImages.forEach(img => img.classList.remove('active'));
+            const matchedImg = document.querySelector(`.product-img__item[data-img="${targetId}"]`);
+            if (matchedImg) matchedImg.classList.add('active');
+          }
+          if (bgShape && gradients.length) {
+            const realIdx = swiperInstance.realIndex;
+            bgShape.style.background = gradients[realIdx % gradients.length];
+          }
+        }
+
+        const swiperInstance = new Swiper('.product-slider', {
+          effect: 'fade',
+          fadeEffect: { crossFade: true },
+          loop: true,
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          speed: 550,
+          navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+          },
+          on: {
+            init: function() { updateFromSlide(this); },
+            slideChange: function() { updateFromSlide(this); },
+            transitionEnd: function() { updateFromSlide(this); }
+          }
+        });
+
+        if (bgShape && !bgShape.style.background) bgShape.style.background = gradients[0];
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSwiperAndSlider);
+      } else {
+        initSwiperAndSlider();
+      }
+    })();
+  </script>
+</body>
+</html>
