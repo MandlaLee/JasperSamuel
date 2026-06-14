@@ -164,3 +164,74 @@ function closeOpenHandsPopup() {
 function confirmOpenHands() {
   window.location.href = "https://YOUR-KINGSHIP-WEBSITE-URL.com/open-hands";
 }
+
+
+
+
+
+
+
+/* =========================
+  SLIDERRRRRRRR
+========================= */
+(function() {
+  function initSlider() {
+    if (typeof Swiper === 'undefined') {
+      console.warn("Swiper not loaded yet, retrying...");
+      setTimeout(initSlider, 100);
+      return;
+    }
+    const bgShape = document.querySelector('.bg-shape');
+    const productImages = document.querySelectorAll('.product-img__item');
+    const gradients = [
+      "radial-gradient(circle at 15% 25%, #c73f4a, #8b1e3a)",
+      "radial-gradient(circle at 75% 20%, #2c3e8f, #0f1a2f)",
+      "radial-gradient(circle at 30% 80%, #1f6392, #0b1c2c)",
+      "radial-gradient(circle at 65% 40%, #b53b4b, #641e33)",
+      "radial-gradient(circle at 20% 60%, #2c5a7a, #0c1a28)",
+      "radial-gradient(circle at 70% 70%, #b5473a, #721c2c)",
+      "radial-gradient(circle at 40% 30%, #1f5680, #0a1422)",
+      "radial-gradient(circle at 80% 50%, #b73c48, #651e2e)",
+      "radial-gradient(circle at 25% 45%, #2b6d8f, #0c1d2b)",
+      "radial-gradient(circle at 55% 80%, #c24249, #7a1c2f)",
+      "radial-gradient(circle at 10% 70%, #1f5a78, #0f1a2c)",
+      "radial-gradient(circle at 85% 25%, #aa3643, #4a1528)",
+      "radial-gradient(circle at 45% 55%, #1d6185, #0b1724)",
+      "radial-gradient(circle at 60% 35%, #bc414b, #681e2f)"
+    ];
+    function updateSlide(swiper) {
+      if (!swiper || !productImages.length) return;
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      if (!activeSlide) return;
+      const targetId = activeSlide.getAttribute('data-target');
+      if (targetId) {
+        productImages.forEach(img => img.classList.remove('active'));
+        const matched = document.querySelector(`.product-img__item[data-img="${targetId}"]`);
+        if (matched) matched.classList.add('active');
+      }
+      if (bgShape && gradients.length) {
+        const idx = swiper.realIndex % gradients.length;
+        bgShape.style.background = gradients[idx];
+      }
+    }
+    const swiper = new Swiper('.product-slider', {
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      loop: true,
+      autoplay: { delay: 3500, disableOnInteraction: false, pauseOnMouseEnter: true },
+      speed: 550,
+      navigation: { nextEl: '.next', prevEl: '.prev' },
+      on: {
+        init: function() { updateSlide(this); },
+        slideChange: function() { updateSlide(this); },
+        transitionEnd: function() { updateSlide(this); }
+      }
+    });
+    if (bgShape && !bgShape.style.background) bgShape.style.background = gradients[0];
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSlider);
+  } else {
+    initSlider();
+  }
+})();
