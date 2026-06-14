@@ -151,3 +151,16 @@ if (contactForm) {
   });
 
 }
+
+
+function openHandsPopup() {
+  document.getElementById("openHandsModal").style.display = "flex";
+}
+
+function closeOpenHandsPopup() {
+  document.getElementById("openHandsModal").style.display = "none";
+}
+
+function confirmOpenHands() {
+  window.location.href = "https://YOUR-KINGSHIP-WEBSITE-URL.com/open-hands";
+}
