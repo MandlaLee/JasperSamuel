@@ -1400,3 +1400,43 @@ ul{
   }
 
 }
+
+
+/* =========================
+   DONATE IMPACT
+========================= */
+.donate-impact {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.impact-text {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.impact-text p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--light-text);
+  margin-bottom: 25px;
+}
+
+.impact-text h3 {
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: var(--dark);
+  position: relative;
+}
+
+.impact-text h3::before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
