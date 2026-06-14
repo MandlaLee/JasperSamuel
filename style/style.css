@@ -1189,11 +1189,20 @@ ul{
   }
 
 }
+.donate-why {
+  background: var(--light-bg);
+}
+
+.donate-why .container {
+  display: flex;
+  justify-content: center;
+}
+
 .info-card {
-  background: #ffffff;
-  padding: 30px;
+  background: #fff;
+  padding: 40px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
