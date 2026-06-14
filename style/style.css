@@ -1205,8 +1205,19 @@ ul{
 }
 
 .donate-why .container {
-  display: flex;
-  justify-content: center;
+  display: block; /* FIX: remove flex that was breaking layout */
+}
+
+
+/* =========================
+   NEW LAYOUT WRAPPER (IMPORTANT FIX)
+========================= */
+
+.donate-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
 }
 
 
@@ -1221,9 +1232,6 @@ ul{
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-
   text-align: left;
 }
 
@@ -1276,18 +1284,36 @@ ul{
 
 
 /* =========================
+   BANK CARD (NEW STRUCTURE FIX)
+========================= */
+
+.bank-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--primary);
+
+  position: sticky;
+  top: 120px;
+}
+
+.bank-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
+
+
+/* =========================
    BANK DETAILS BOX
 ========================= */
 
-.bank-details {
-  margin-top: 30px;
-}
-
 .bank-box {
   background: #f7f9fc;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
-  border-left: 4px solid var(--primary);
+  margin-top: 15px;
 }
 
 .bank-box p {
@@ -1344,7 +1370,7 @@ ul{
 
 
 /* =========================
-   OPTIONAL FEATURED CARD (HIGHLIGHT FIRST OPTION)
+   OPTIONAL FEATURED CARD
 ========================= */
 
 .donation-box.featured {
@@ -1359,8 +1385,14 @@ ul{
 
 @media (max-width: 900px) {
 
-  .donate-why .container {
-    display: block;
+  .donate-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bank-card {
+    position: relative;
+    top: auto;
+    margin-top: 20px;
   }
 
   .info-card {
