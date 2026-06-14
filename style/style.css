@@ -1402,8 +1402,19 @@ ul{
 }
 
 
+
 /* =========================
-   FORCE LEFT FLOW LAYOUT
+ OPEN HANDS INITIATIVE (FEATURED)
+========================= */
+
+.donation-box.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.02);
+}
+
+
+/* =========================
+   OPEN HANDS BLOG STYLE IMPACT (LEFT FLOW FIX)
 ========================= */
 
 .donate-impact .container {
@@ -1411,30 +1422,31 @@ ul{
   margin: 0 auto;
 }
 
-/* THIS is the key fix */
+/* MAIN TEXT WRAPPER */
 .impact-text {
   text-align: left !important;
   max-width: 900px;
-  margin: 0;              /* IMPORTANT: removes centering */
+  margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Ensure EVERYTHING inherits left alignment */
+/* FORCE LEFT ALIGNMENT CONSISTENCY */
 .impact-text h2,
 .impact-text h3,
 .impact-text p {
   text-align: left !important;
 }
 
-/* Main title should still feel structured, not floating center */
+
+/* MAIN TITLE */
 .impact-text h2 {
   font-size: 42px;
   margin-bottom: 50px;
   color: var(--dark);
-  text-align: left; /* explicitly left */
 }
 
-/* Section headings */
+
+/* SUB HEADINGS (OPEN HANDS SECTIONS) */
 .impact-text h3 {
   font-size: 24px;
   margin-top: 45px;
@@ -1444,7 +1456,7 @@ ul{
   position: relative;
 }
 
-/* underline accent */
+/* ACCENT LINE */
 .impact-text h3::before {
   content: "";
   width: 50px;
@@ -1455,7 +1467,8 @@ ul{
   border-radius: 2px;
 }
 
-/* Paragraph flow */
+
+/* PARAGRAPH FLOW */
 .impact-text p {
   font-size: 17px;
   line-height: 2;
@@ -1463,13 +1476,35 @@ ul{
   margin-bottom: 22px;
 }
 
-/* remove any accidental centering from parent sections */
+
+/* SECTION OVERRIDE */
 .donate-impact {
   text-align: left;
+  background: var(--white);
+  padding: 100px 0;
 }
 
-/* mobile cleanup */
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+
 @media (max-width: 900px) {
+
+  .donate-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bank-card {
+    position: relative;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .info-card {
+    padding: 25px;
+  }
+
   .impact-text {
     max-width: 100%;
     padding: 0 15px;
