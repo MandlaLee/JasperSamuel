@@ -1189,8 +1189,19 @@ ul{
   }
 
 }
+/* =========================================================
+   DONATION PAGE STYLES
+   Kingship Christian Centre / Jasper Samuel Ministries
+========================================================= */
+
+
+/* =========================
+   DONATION SECTION BASE
+========================= */
+
 .donate-why {
   background: var(--light-bg);
+  padding: 100px 0;
 }
 
 .donate-why .container {
@@ -1198,11 +1209,162 @@ ul{
   justify-content: center;
 }
 
+
+/* =========================
+   INFO CARD (MAIN BLOCK)
+========================= */
+
 .info-card {
-  background: #fff;
+  background: #ffffff;
   padding: 40px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  max-width: 900px;
+
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  text-align: left;
+}
+
+
+/* =========================
+   INFO CARD TYPOGRAPHY
+========================= */
+
+.info-card h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.info-card h3 {
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--dark);
+}
+
+.info-card p {
+  margin-bottom: 15px;
+  color: var(--light-text);
+  line-height: 1.8;
+}
+
+
+/* =========================
+   LIST STYLING
+========================= */
+
+.info-card ul {
+  margin-top: 20px;
+}
+
+.info-card ul li {
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+  color: var(--text);
+}
+
+.info-card ul li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+
+/* =========================
+   BANK DETAILS BOX
+========================= */
+
+.bank-details {
+  margin-top: 30px;
+}
+
+.bank-box {
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+.bank-box p {
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+
+/* =========================
+   DONATION GRID ENHANCEMENTS
+========================= */
+
+.donation-grid,
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+
+/* =========================
+   DONATION CARDS
+========================= */
+
+.donation-box,
+.impact-box {
+  background: var(--white);
+  padding: 35px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow-light);
+  transition: 0.3s ease;
+}
+
+.donation-box:hover,
+.impact-box:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.donation-box h3,
+.impact-box h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.donation-box p,
+.impact-box p {
+  color: var(--light-text);
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   OPTIONAL FEATURED CARD (HIGHLIGHT FIRST OPTION)
+========================= */
+
+.donation-box.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.02);
+}
+
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+
+@media (max-width: 900px) {
+
+  .donate-why .container {
+    display: block;
+  }
+
+  .info-card {
+    padding: 25px;
+  }
+
 }
