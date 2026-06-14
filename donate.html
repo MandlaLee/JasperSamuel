@@ -17,8 +17,32 @@
   <!-- STYLESHEET -->
   <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
+  <!-- OPEN HANDS CONFIRMATION POPUP -->
+<div id="openHandsModal" class="modal-overlay">
+  <div class="modal-box">
 
+    <h2>Leaving Jasper Samuel Ministries</h2>
+    <p>
+      You are about to be redirected to the official Kingship Christian Centre website,
+      where the Open Hands Program is hosted.
+    </p>
+    <p>
+      Kingship Christian Centre is the church where Pastor Jasper Samuel serves as founding pastor and leader.
+    </p>
+    <div class="modal-actions">
+      <button class="btn-confirm" onclick="confirmOpenHands()">
+        Continue
+      </button>
+      <button class="btn-cancel" onclick="closeOpenHandsPopup()">
+        Cancel
+      </button>
+    </div>
+
+  </div>
+</div>
+
+   <!-- BODY -->
+<body>
  <!-- HEADER -->
   <header class="header">
 
@@ -32,7 +56,6 @@
 </div>
 
         <div class="logo-text">
-
           <span>JASPER SAMUEL</span>
 
           <small>The Thrive Generation</small>
