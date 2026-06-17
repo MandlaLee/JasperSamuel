@@ -166,3 +166,91 @@ function confirmOpenHands() {
 }
 
 
+const slides = document.querySelectorAll(".identity-slide");
+const dots = document.querySelectorAll(".dot");
+
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let current = 0;
+let autoSlide;
+
+function showSlide(index){
+
+    slides.forEach(slide =>
+        slide.classList.remove("active")
+    );
+
+    dots.forEach(dot =>
+        dot.classList.remove("active")
+    );
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    current = index;
+}
+
+function nextSlide(){
+
+    let next = current + 1;
+
+    if(next >= slides.length){
+        next = 0;
+    }
+
+    showSlide(next);
+}
+
+function prevSlide(){
+
+    let prev = current - 1;
+
+    if(prev < 0){
+        prev = slides.length - 1;
+    }
+
+    showSlide(prev);
+}
+
+nextBtn.addEventListener("click", () => {
+    nextSlide();
+    restartAuto();
+});
+
+prevBtn.addEventListener("click", () => {
+    prevSlide();
+    restartAuto();
+});
+
+dots.forEach((dot,index) => {
+
+    dot.addEventListener("click", () => {
+
+        showSlide(index);
+
+        restartAuto();
+
+    });
+
+});
+
+function startAuto(){
+
+    autoSlide = setInterval(() => {
+
+        nextSlide();
+
+    }, 5000);
+
+}
+
+function restartAuto(){
+
+    clearInterval(autoSlide);
+
+    startAuto();
+
+}
+
+startAuto();
