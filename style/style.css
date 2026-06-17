@@ -1865,3 +1865,66 @@ body{
   opacity: 1;
   transform: scale(1.05);
 }
+
+
+/* ==========================
+   FOOTER SOCIAL MEDIA
+========================== */
+
+.footer-social {
+  max-width: 280px;
+}
+
+.social-links-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-links-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+}
+
+.social-links-icons a:hover {
+  transform: translateY(-3px);
+}
+
+.social-links-icons img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.footer-social-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 18px 0;
+}
+
+.platform-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.platform-links a {
+  display: flex;
+  align-items: center;
+}
+
+.platform-links img {
+  height: 20px;
+  width: auto;
+  opacity: 0.9;
+  transition: 0.3s ease;
+}
+
+.platform-links img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
