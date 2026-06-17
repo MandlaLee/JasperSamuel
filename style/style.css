@@ -286,31 +286,31 @@ ul{
 .hero-home{
   background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../hero/index-hero.png");
+    url("../hero/hero-hero.jpg");
 }
 
 .hero-about{
   background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../hero/about-hero.png");
+    url("../hero/about-hero.jpg");
 }
 
 .hero-books{
   background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../hero/books-hero.png");
+    url("../hero/books-hero.jpg");
 }
 
 .hero-contact{
   background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../hero/contact-hero.png");
+    url("../hero/contact-hero.jpg");
 }
 
 .hero-donate{
   background-image:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-    url("../hero/donate-hero.png");
+    url("../hero/giving-hero.jpg");
 }
 
 
