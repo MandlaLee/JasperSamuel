@@ -1,343 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donate | Jasper Samuel</title>
-
-   <!-- FAVICONS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Give | Jasper Samuel Ministries & Kingship Christian Centre</title>
+  <meta name="description" content="Support the ministry, community outreach and Open Hands Program through the official Kingship Christian Centre giving page.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pastor.kingshipcentre.co.za/donate.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Support the Ministry and Open Hands Program">
+  <meta property="og:description" content="Help strengthen families, serve communities and support ministry through Kingship Christian Centre.">
+  <meta property="og:url" content="https://pastor.kingshipcentre.co.za/donate.html">
+  <meta property="og:image" content="https://pastor.kingshipcentre.co.za/hero/giving-hero.jpg">
+  <meta name="theme-color" content="#2f78bb">
   <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicons/android-chrome-512x512.png">
   <link rel="shortcut icon" href="favicons/favicon.ico">
-  <meta name="theme-color" content="#2f78bb">
-
-  <!-- STYLESHEET -->
   <link rel="stylesheet" href="style/style.css">
 </head>
-  <!-- OPEN HANDS CONFIRMATION POPUP -->
-<div id="openHandsModal" class="modal-overlay">
-  <div class="modal-box">
-
-    <h2>Leaving Jasper Samuel Ministries</h2>
-    <p>
-      You are about to be redirected to the official Kingship Christian Centre website,
-      where the Open Hands Program is hosted.
-    </p>
-    <p>
-      Kingship Christian Centre is the church where Pastor Jasper Samuel serves as founding pastor and leader.
-    </p>
-    <div class="modal-actions">
-      <button class="btn-confirm" onclick="confirmOpenHands()">
-        Continue
-      </button>
-      <button class="btn-cancel" onclick="closeOpenHandsPopup()">
-        Cancel
-      </button>
-    </div>
-
-  </div>
-</div>
-
-   <!-- BODY -->
 <body>
- <!-- HEADER -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header class="header">
-
     <div class="container nav-container">
-
-      <!-- LOGO -->
-      <a href="index.html" class="logo">
-
-       <div class="logo-image">
-  <img src="images/logo.png" alt="Jasper Samuel Logo">
-</div>
-
-        <div class="logo-text">
-          <span>JASPER SAMUEL</span>
-
-          <small>The Thrive Generation</small>
-
-        </div>
-
+      <a href="index.html" class="logo" aria-label="Jasper Samuel home">
+        <div class="logo-image"><img src="images/logo.png" alt="" width="54" height="54"></div>
+        <div class="logo-text"><span>JASPER SAMUEL</span><small>The Thrive Generation</small></div>
       </a>
-
-      <!-- NAVIGATION -->
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html">HOME</a>
-
         <a href="books.html">BOOKS</a>
-
         <a href="contact.html">CONTACT</a>
-
         <a href="about.html">ABOUT</a>
-
-        <a href="donate.html" class="donate-link">
-          GIVE
-        </a>
-
+        <a href="donate.html" class="donate-link" aria-current="page">GIVE</a>
       </nav>
-
     </div>
-
   </header>
 
-  <!-- HERO -->
-  <section class="hero hero-donate">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Support the Ministry</h1>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY GIVE -->
- <section class="donate-why">
-  <div class="container">
-
-    <div class="donate-layout">
-
-      <!-- LEFT: MAIN CARD -->
-      <div class="info-card">
-
-        <h2>Why Your Support Matters</h2>
-
-         <p>
-        Your donation supports the work of Kingship Christian Centre, under the leadership of Pastor Jasper Samuel. As the founding and senior pastor, he oversees the ministry’s vision, which includes community outreach, charity initiatives, church events, and ongoing spiritual development programs.
-      </p>
-      <p>
-        Every contribution helps strengthen the church’s ability to serve people, support families, and make a meaningful impact in the community through practical and spiritual care.
-      </p>
-
-        <ul>
-         <li>Support community outreach and charity-driven events.</li>
-        <li>Help provide care, guidance, and support to individuals and families in need.</li>
-        <li>Fund church gatherings, teaching programs, and spiritual development initiatives.</li>
-        <li>Enable ongoing ministry activities, workshops, and community contributions.</li>
-        </ul>
-
-      </div>
-
-      <!-- RIGHT: BANK CARD -->
-      <div class="bank-card">
-
-        <h3>Banking Details</h3>
-
-        <div class="bank-box">
-          <p><strong>Bank:</strong>Capitec</p>
-          <p><strong>Account Name:</strong> Kingship Christian Centre</p>
-          <p><strong>Account Number:</strong> 7099 766 5142</p>
-          <p><strong>Branch Code:</strong> 78001</p>
-          <p><strong>Reference:</strong> Your Name / Donation</p>
-       </div>
-
-        <div class="bank-box">
-          <p><strong>Bank:</strong> Standard Bank</p>
-          <p><strong>Account Name:</strong> Kingship Christian Centre</p>
-          <p><strong>Account Number:</strong> 123 456 789</p>
-          <p><strong>Branch Code:</strong> 051001</p>
-          <p><strong>Reference:</strong> Your Name / Donation</p>
-        </div>
-
-    </div>
-
-  </div>
-</section>
-
-  <!-- DONATION OPTIONS -->
-  <section class="donate-options">
-    <div class="container">
-      <h2>Ways to Give</h2>
-      <div class="donation-grid">
-        <div class="donation-box">
-          <h3>One-Time Donation</h3>
-          <p>Make a single contribution to support a specific project, book, or outreach initiative.</p>
-          <a href="#" class="btn btn-blue">Donate Now</a>
-        </div>
-        <div class="donation-box">
-          <h3>Monthly Support</h3>
-          <p>Become a recurring supporter and help sustain ongoing ministry programs, events, and teaching resources.</p>
-          <a href="#" class="btn btn-blue">Become a Partner</a>
-        </div>
-        <div class="donation-box">
-          <h3>Event Sponsorship</h3>
-          <p>Support special ministry events, workshops, or conferences to reach a wider audience with transformational teaching.</p>
-          <a href="#" class="btn btn-blue">Sponsor an Event</a>
+  <main id="main-content">
+    <section class="hero hero-donate" aria-labelledby="give-title">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-small-text">Generosity · Compassion · Kingdom Impact</p>
+          <h1 id="give-title">Support the Ministry</h1>
+          <p>Your generosity helps Kingship Christian Centre serve people through ministry, family support, spiritual development and practical community care.</p>
+          <div class="hero-buttons">
+            <a href="https://kingshipcentre.co.za/give.html" class="btn btn-light">Go to Official Giving Page</a>
+            <a href="#open-hands" class="btn btn-outline">Explore Open Hands</a>
+          </div>
         </div>
       </div>
-    </div>
- </div>
+    </section>
 
-      <p class="books-note">
-        These books are designed to equip readers with wisdom, practical tools, and encouragement for navigating personal and spiritual challenges.
-      </p>
-    </div>
-  </section>
+    <section class="donate-why" aria-labelledby="support-title">
+      <div class="container donate-layout">
+        <article class="info-card">
+          <h2 id="support-title">Why Your Support Matters</h2>
+          <p>Jasper Samuel serves as the founding pastor of Kingship Christian Centre. Giving supports the church’s vision for worship, teaching, family restoration, leadership development, community outreach and practical care.</p>
+          <p>Every contribution helps the ministry create spaces where people can encounter God, receive guidance, rebuild their lives and take part in meaningful service.</p>
+          <ul>
+            <li>Support community outreach and compassionate relief.</li>
+            <li>Strengthen marriage, family and emotional-care initiatives.</li>
+            <li>Help fund church gatherings, teaching and discipleship.</li>
+            <li>Equip youth through mentorship, creativity and leadership development.</li>
+          </ul>
+        </article>
 
-<!-- OPEN HANDS IMPACT -->
-<section class="donate-impact open-hands">
-  <div class="container">
-
-    <h2>Open Hands Program</h2>
-    <p class="subtitle">Where Love Takes Action</p>
-
-    <div class="impact-text">
-
-      <p>
-        At Kingship Christian Centre, faith is never meant to stay in words alone. It becomes visible in action, in presence, and in the quiet moments where real needs are met with real compassion. Through the Open Hands Program, we step into communities not as distant observers, but as people who choose to walk closely with those facing hardship, uncertainty, and rebuilding.
-      </p>
-
-      <p>
-        These are not isolated projects or checklists of charity. They are relationships. They are consistent acts of care designed to restore dignity, rebuild what has been broken, and remind people that their story is not finished yet.
-      </p>
-
-      <h3>Education & Youth Support</h3>
-      <p>
-        There are children who quietly carry burdens no child should have to carry — walking to school without proper uniforms, or trying to learn without the basic tools they need to participate fully in their education. Through Open Hands, we respond with school uniforms, stationery packs, and practical support that restores dignity.
-      </p>
-
-      <p>
-        For young people navigating identity, pressure, and uncertainty, we create spaces of guidance and stability. Leadership development, mentorship circles, life skills training, and career guidance workshops help them build discipline, make grounded decisions, and step into their future with clarity rather than confusion.
-      </p>
-
-      <h3>Family Strengthening & Relationship Support</h3>
-      <p>
-        Families often carry invisible weight — conflict that has gone unspoken, distance that has grown over time, and wounds that feel too complex to repair. Through marriage preparation, relationship workshops, parenting support groups, and family mediation, we create safe spaces where healing can begin.
-      </p>
-
-      <p>
-        These are not formal sessions. They are moments where people learn to listen again, to speak honestly again, and to rebuild trust step by step. We believe every family, no matter how strained, still holds the possibility of restoration.
-      </p>
-
-      <h3>Emotional Care & Healing Support</h3>
-      <p>
-        Grief does not follow schedules, and emotional pain rarely announces itself. In our peer support circles, people are given space to breathe again — without pressure, without performance, and without judgment.
-      </p>
-
-      <p>
-        Whether someone is carrying grief, trauma, stress, or anxiety, they are met with presence and understanding. Sometimes healing begins simply by sitting in a room where you are not expected to pretend you are okay.
-      </p>
-
-      <h3>Community Relief & Seasonal Support</h3>
-      <p>
-        During difficult seasons, practical needs become urgent. Through seasonal outreach, we distribute clothing, blankets, hygiene packs, and winter relief supplies to individuals and families facing harsh conditions.
-      </p>
-
-      <p>
-        But beyond the physical items, the deeper impact is connection — the reminder that someone saw, someone cared, and someone chose to respond with kindness at the moment it was needed most.
-      </p>
-
-      <h3>Creative Expression & Youth Development</h3>
-      <p>
-        Within every young person is a voice waiting to be heard — sometimes through music, sometimes through writing, sometimes through movement or spoken word. Our creative programs provide spaces for that voice to emerge.
-      </p>
-
-      <p>
-        Through music training, creative arts workshops, spoken word sessions, and youth performance platforms, confidence is rebuilt and expression is unlocked. What begins as hesitation often grows into courage, and eventually into identity.
-      </p>
-
-      <h3>Volunteer With Us</h3>
-      <p>
-        Open Hands is not carried by programs alone — it is carried by people. Every act of care, every moment of support, every life touched is made possible by those who choose to serve.
-      </p>
-
-      <p>
-        Whether it is mentoring a young person, assisting with relief efforts, sitting with someone in emotional need, or supporting behind the scenes, there is a place for anyone willing to show up with sincerity. You do not have to be perfect — only willing to be present.
-      </p>
-  <!-- open hands CTA -->
-      <div class="open-hands-cta">
-  <button class="open-hands-btn" onclick="openHandsPopup()">
-    Explore Open Hands Program
-  </button>
-</div>
-
-    </div>
-
-  </div>
-</section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Partner with the Ministry</h2>
-      <p>Your generosity fuels a mission of hope, restoration, and kingdom impact. Join us in transforming lives and empowering people with truth, guidance, and emotional healing.</p>
-      <a href="#" class="btn btn-light">Donate Now</a>
-      <a href="contact.html" class="btn btn-outline">Contact Us</a>
-    </div>
-  </section>
-
-<!-- FOOTER -->
-<footer class="footer">
-
-  <div class="container footer-container">
-
-    <!-- COLUMN 1: About Ministry -->
-    <div class="footer-column">
-      <h3>Jasper Samuel</h3>
-      <p>
-        Encouraging spiritual growth, emotional healing,
-        restoration, leadership, and kingdom-centered living.
-      </p>
-    </div>
-
-    <!-- COLUMN 2: Quick Links -->
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="books.html">Books</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
-    </div>
-
-    <!-- COLUMN 3: Social Links -->
-    <div class="footer-column">
-      <h4>Connect Online</h4>
-      <div class="social-links">
-        <a href="https://facebook.com/MOTIVATORNIA" target="_blank">
-          <img src="images/facebook.png" alt="Facebook"> Facebook
-        </a>
-       <a href="https://www.instagram.com/jaspersamuelj/" target="_blank">
-          <img src="images/instagram.png" alt="Instagram"> Instagram
-        </a>
-        <a href="https://tiktok.com/@jaspersamuel" target="_blank">
-          <img src="images/tiktok.png" alt="TikTok"> TikTok
-        </a>
-        <a href="https://youtube.com/@jaspersamuel" target="_blank">
-          <img src="images/youtube.png" alt="YouTube"> YouTube
-        </a>
-        <a href="https://twitter.com/@jaspersamuel" target="_blank">
-          <img src="images/twitter.png" alt="Twitter"> Twitter / X
-        </a>
+        <aside class="bank-card">
+          <h3>Give Safely</h3>
+          <p>All financial giving and current banking information are handled through the official Kingship Christian Centre website.</p>
+          <p>This prevents outdated or placeholder payment information from being displayed on Jasper Samuel’s personal ministry site.</p>
+          <a href="https://kingshipcentre.co.za/give.html" class="btn btn-blue">Official Giving Page</a>
+        </aside>
       </div>
+    </section>
+
+    <section class="donate-options" aria-labelledby="ways-title">
+      <div class="container">
+        <div class="section-heading">
+          <span>Ways to Participate</span>
+          <h2 id="ways-title">More Than Financial Giving</h2>
+          <p>Support can take the form of generosity, practical service, partnership, prayer and sharing the work with others.</p>
+        </div>
+        <div class="donation-grid">
+          <article class="donation-box"><h3>Give</h3><p>Support ministry activities, outreach, teaching, worship and community-care initiatives through the official church giving page.</p><a href="https://kingshipcentre.co.za/give.html" class="btn btn-blue">Give Through Kingship</a></article>
+          <article class="donation-box"><h3>Volunteer</h3><p>Offer your time, skills and presence to practical outreach, youth development, events and compassionate service.</p><a href="contact.html?subject=Partnership%20Opportunity" class="btn btn-blue">Ask About Volunteering</a></article>
+          <article class="donation-box"><h3>Partner</h3><p>Connect as an organisation, ministry, professional or sponsor to help extend the reach and quality of the work.</p><a href="contact.html?subject=Partnership%20Opportunity" class="btn btn-blue">Discuss a Partnership</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="donate-impact open-hands" id="open-hands" aria-labelledby="open-hands-title">
+      <div class="container">
+        <h2 id="open-hands-title">Open Hands Program</h2>
+        <p class="subtitle">Where Love Takes Action</p>
+        <div class="impact-text">
+          <p>At Kingship Christian Centre, faith is not meant to remain in words alone. Through Open Hands, compassion becomes visible in practical care, consistent presence and relationships that restore dignity.</p>
+
+          <h3>Education and Youth Support</h3>
+          <p>School supplies, uniforms, mentorship, life-skills development and career guidance help young people participate fully in education and approach the future with greater confidence.</p>
+
+          <h3>Family Strengthening</h3>
+          <p>Marriage preparation, relationship workshops, parenting support and family guidance create safe spaces where communication can improve and trust can begin to return.</p>
+
+          <h3>Emotional Care and Healing</h3>
+          <p>Peer support and compassionate listening give people room to process grief, trauma, stress and anxiety without performance or judgement.</p>
+
+          <h3>Community Relief</h3>
+          <p>Seasonal outreach provides practical items such as clothing, blankets and hygiene support while reminding people that they are seen and valued.</p>
+
+          <h3>Creative and Leadership Development</h3>
+          <p>Music, writing, performance, mentorship and leadership opportunities help young people discover their voice, discipline and sense of purpose.</p>
+
+          <div class="open-hands-cta">
+            <a href="https://kingshipcentre.co.za/give.html" class="open-hands-btn">Support Open Hands</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Partner with a ministry committed to faith in action.</h2>
+        <p>Give through the official Kingship Christian Centre platform or contact the team to discuss volunteering, sponsorship and practical partnership.</p>
+        <a href="https://kingshipcentre.co.za/give.html" class="btn btn-light">Official Giving Page</a>
+        <a href="contact.html?subject=Partnership%20Opportunity" class="btn btn-outline">Contact the Ministry</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-column"><h3>Jasper Samuel Ministries</h3><p>Encouraging spiritual growth, emotional healing, restoration, leadership and kingdom-centred living.</p></div>
+      <div class="footer-column"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="books.html">Books</a><a href="donate.html">Give</a><a href="contact.html">Contact</a></div>
+      <div class="footer-column"><h4>Connect</h4><div class="social-links">
+        <a href="https://facebook.com/MOTIVATORNIA" target="_blank" rel="noopener noreferrer"><img src="images/facebook.png" alt="" width="20" height="20">Facebook</a>
+        <a href="https://www.instagram.com/jaspersamuelj/" target="_blank" rel="noopener noreferrer"><img src="images/instagram.png" alt="" width="20" height="20">Instagram</a>
+        <a href="https://youtube.com/@jaspersamuel" target="_blank" rel="noopener noreferrer"><img src="images/youtube.png" alt="" width="20" height="20">YouTube</a>
+        <a href="https://tiktok.com/@jaspersamuel" target="_blank" rel="noopener noreferrer"><img src="images/tiktok.png" alt="" width="20" height="20">TikTok</a>
+      </div></div>
+      <div class="footer-column"><h4>Ministry Focus</h4><p>Marriage Restoration</p><p>Emotional Healing</p><p>Leadership Development</p><p>Kingdom Identity</p></div>
     </div>
+    <div class="container footer-bottom"><p>© <span data-current-year>2026</span> Jasper Samuel. All Rights Reserved.</p><p class="made-by">Website designed &amp; developed by <a href="https://mandlalee.co.za" target="_blank" rel="noopener noreferrer">MandlaLee</a></p></div>
+  </footer>
 
-    <!-- COLUMN 4: Ministry Focus -->
-    <div class="footer-column">
-      <h4>Ministry Focus</h4>
-      <p>Marriage Restoration</p>
-      <p>Emotional Healing</p>
-      <p>Leadership Development</p>
-      <p>Kingdom Identity</p>
-    </div>
-
-  </div>
-
-  <!-- FOOTER BOTTOM -->
-  <div class="footer-bottom">
-    <p>© 2026 Jasper Samuel. All Rights Reserved.</p>
-    <p class="made-by">
-      Website designed & developed by 
-      <a href="https://mandlalee.co.za" target="_blank">MandlaLee</a>
-    </p>
-  </div>
-
-</footer>
-
-<!-- JS -->
-<script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
