@@ -21,11 +21,16 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="style/style.css">
   <style>
-    /* Avoid excessive side-cropping when the desktop browser window is tall. */
+    /* Show more of the landscape portrait in tall desktop windows and fade it cleanly into the hero. */
     @media (min-width: 901px) and (max-aspect-ratio: 3 / 2) {
       .hero-home {
-        background-size: 108% auto;
-        background-position: center top;
+        background-color: #071c2c;
+        background-image:
+          linear-gradient(to bottom, rgba(7, 28, 44, 0) 30%, rgba(7, 28, 44, 0.45) 43%, rgba(7, 28, 44, 0.92) 52%, #071c2c 58%),
+          url("hero/hero-hero.jpg");
+        background-size: 100% 100%, 108% auto;
+        background-position: center, center top;
+        background-repeat: no-repeat;
       }
     }
   </style>
