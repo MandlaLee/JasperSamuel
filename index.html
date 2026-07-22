@@ -20,6 +20,15 @@
   <link rel="shortcut icon" href="favicons/favicon.ico">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="style/style.css">
+  <style>
+    /* Avoid excessive side-cropping when the desktop browser window is tall. */
+    @media (min-width: 901px) and (max-aspect-ratio: 3 / 2) {
+      .hero-home {
+        background-size: 108% auto;
+        background-position: center top;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
